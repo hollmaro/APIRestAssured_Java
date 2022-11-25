@@ -1,0 +1,21 @@
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+def testNGVersion = '7.0.0'
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: testNGVersion
+    implementation 'io.rest-assured:rest-assured:4.1.2'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.6'
+    implementation 'io.rest-assured:json-schema-validator:4.1.2'
+}
+
+test {
+    useTestNG()
+}
